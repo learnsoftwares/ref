@@ -35,11 +35,20 @@ Namespace
 Namespaces are used for dividing cluster resources between multiple users.
 They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.
 
+###########################################################################################################################
+statefulset
+
+A StatefulSet is a Kubernetes resource object that manages a set of pods with unique identities. 
+By assigning a persistent ID that is maintained even if the pod is rescheduled, a StatefulSet helps maintain the uniqueness and ordering of pods. 
+With unique pod identifiers, administrators can efficiently attach cluster volumes to new pods across failures.
+
+StatefulSets are typically used for applications that require persistent storage for stateful workloads, and ordered, automated rolling updates.
+###########################################################################################################################
 Daemon set:
 
 Daemon set is a set of pods that runs only once on a host.
 They are used for host layer attributes like a network or for monitoring a network, which you may not need to run on a host more than once.
-
+###########################################################################################################################
 Different services in kubernetes
 
   Cluster IP service
@@ -59,12 +68,21 @@ LoadBalancer
   The LoadBalancer service is used to expose services to the internet.
   A Network load balancer, for example, creates a single IP address that forwards all traffic to your service. 
   
+ ########################################################################################################################### 
  Ingress Network
  
   An ingress is an object that allows users to access your Kubernetes services from outside the Kubernetes cluster. 
   Users can configure the access by creating rules that define which inbound connections reach which services.
-  
- 
+ ###########################################################################################################################
+PersistentVolume
+
+PersistentVolume (PV) in Kubernetes is a pool of pre-provisioned storage resources in a Kubernetes cluster,
+that can be used across different user environments. Its lifecycle is separate from a Pod that uses the PersistentVolume.
+
+PersistentVolumeClaim (PVC)
+
+PersistentVolumeClaim (PVC), is a process of storage requests from PVs by the users in Kubernetes. Kubernetes binds PVs with the PVCs based on the request and property set on those PVs. 
+Kubernetes searches for PVs that correspond to the PVCs’ requested capacity and specified properties, so that each PVC can bind to a single PV. 
  
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Kubernetes Deployment Strategies
