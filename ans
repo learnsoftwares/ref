@@ -64,5 +64,16 @@ LoadBalancer
   An ingress is an object that allows users to access your Kubernetes services from outside the Kubernetes cluster. 
   Users can configure the access by creating rules that define which inbound connections reach which services.
   
+ 
+ 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Kubernetes Deployment Strategies
+Kubernetes supports multiple rollout strategies for pod deployments. These include:
+
+Recreate: Simultaneously terminates and replaces all pods running the old version of the application with new pods.
+Ramped: Rolls out new application versions while terminating the old pods.
+Rolling update: Replaces old pods with new ones, one-by-one, with zero downtime.
+Canary deployment: Replaces a subset of existing pods with new ones, keeping both versions running, and then rolls out the new version to more pods if the test deployment is a success.
+  
   
   
