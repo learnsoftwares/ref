@@ -1,4 +1,5 @@
 ##############################################################################################
+
 Single Container
 
 apiVersion: v1
@@ -38,6 +39,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: dev
+  
 ##############################################################################################
 Pod with namespace
 
@@ -57,7 +59,7 @@ spec:
 
 ##############################################################################################
 
-Deplloyment
+Deployment
 
 
 apiVersion: apps/v1
@@ -137,7 +139,7 @@ Replication Controller
  
  ClusterIP
  
- apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
  name: back-end
@@ -168,4 +170,5 @@ spec:
    selector:
      matchLabels:
       type: front-end
+      
  ##############################################################################################
